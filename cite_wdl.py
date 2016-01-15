@@ -60,7 +60,7 @@ class WDL(object):
 		"""Given self.id, scrapes data from
 		wdl.com and wraps it up in a dictionary.
 		"""
-		self.url = "http://www.wdl.org/en/item/" + str(self.id) + "/"	
+		self.url = "https://www.wdl.org/en/item/" + str(self.id) + "/"	
 		text = urllib2.urlopen(self.url).read()
 		details = {}
 		details['name'] = re.search(r"""<span class="item_title" itemprop="name">(.*?)</span></h1>""", text, flags=re.DOTALL | re.UNICODE).groups(0)[0]
